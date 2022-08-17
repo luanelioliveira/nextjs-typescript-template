@@ -11,6 +11,9 @@ export default function HomePage() {
     router.push('/dashboard');
   }
 
+  // eslint-disable-next-line no-console
+  console.log(`public env message: ${process.env.NEXT_PUBLIC_ENV_MESSAGE}`);
+
   return (
     <div>
       <h1>Home Page</h1>
@@ -24,3 +27,12 @@ export default function HomePage() {
     </div>
   );
 }
+
+export const getStaticProps = async () => {
+  // eslint-disable-next-line no-console
+  console.log(`private env message: ${process.env.PRIVATE_ENV_MESSAGE}`);
+
+  return {
+    props: {},
+  };
+};
